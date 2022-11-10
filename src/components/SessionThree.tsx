@@ -29,6 +29,10 @@ export default function SessionThree(){
             //console.log(collectionOne); 
     }
 
+    const clicker = () => {
+        alert(1); 
+    }
+
     return (
         <>
             <div style={{padding:'1rem', margin:'1rem'}}>
@@ -47,7 +51,7 @@ export default function SessionThree(){
 
 {
                 collectionTwo.map((item, i)=>(
-                    <p key={i} style={{color:"#00f", border:'solid 1px #0f0', padding: '1rem'}}>{item}</p>
+                    <p key={i} style={{color:"#00f", border:'solid 1px #0f0', padding: '1rem'}} onClick={clicker}>{item}</p>
                 ))
             }
 
