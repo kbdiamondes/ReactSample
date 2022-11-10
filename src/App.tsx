@@ -4,6 +4,7 @@ import TheCard, { CardDetails } from './components/TheCard';
 import MyComp from './components/MyComponent';
 import CompTwo from './components/ComponentTwo';
 import CompThree from './components/ComponentThree';
+import SessionThree from './components/SessionThree';
 
 const Cards:CardDetails[] = [
   {title:'Lizardo', description:'Halo', image:'/images/contemplative-reptile.jpg'},
@@ -40,8 +41,19 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      
+        <SessionThree/>
+      
+    </div>
+  );
 
+}
+
+
+export default App;
+
+
+       /*
         <CompThree> 
           <CompTwo daysoftheweek='Tuesday' clickEvent={handlerClickTwo}>Hello World! </CompTwo>
           <CompTwo daysoftheweek='Sunday' clickEvent={handlerClickTwo}>What is Up!! </CompTwo>
@@ -63,12 +75,4 @@ function App() {
         { Cards.map((item,i)=>
             <TheCard key={i} title={item.title} image={item.image} description={item.description}/>
         )}
-        <Button variant='contained'>Test</Button>
-      </header>
-    </div>
-  );
-
-}
-
-
-export default App;
+        <Button variant='contained'>Test</Button>*/
