@@ -1,16 +1,15 @@
 import './App.css'; //import external css files this way
-import { Button, Input } from '@mui/material';
 import TheCard, { CardDetails } from './components/TheCard';
 import MyComp from './components/MyComponent';
 import CompTwo from './components/ComponentTwo';
 import CompThree from './components/ComponentThree';
 import SessionThree from './components/SessionThree';
+import TheCardList from './components/TheCardList';
+import TheCardSumary from './components/TheCardSummary';
+import { useState } from 'react';
+import CardListProvider from './components/TheCardsContext';
 
-const Cards:CardDetails[] = [
-  {title:'Lizardo', description:'Halo', image:'/images/contemplative-reptile.jpg'},
-  {title:'Iguanaa', description:'Lizard of Oz', image:'/images/contemplative-reptile.jpg'},
-  {title:'Tiki', description:'Hi There', image:'/images/contemplative-reptile.jpg'}
-  ]
+
 
   /*"handlerClick"can be implemented outside or inside the function
   implemented as custom component*/
@@ -25,6 +24,8 @@ const Cards:CardDetails[] = [
   /*handlerChange displays null because it is a generic ChangeEvent*/
   /*Now handlerchange will show value on the console */
 function App() {
+
+
 
   const handlerClick = (event:React.MouseEvent, num:number) => {
     console.log(num)
@@ -41,9 +42,10 @@ function App() {
 
   return (
     <div className="App">
-      
-        <SessionThree/>
-      
+      <CardListProvider>
+        <TheCardSumary />
+        <TheCardList />  
+      </CardListProvider>  
     </div>
   );
 
@@ -68,7 +70,7 @@ export default App;
 
         <Input onChange={handlerChange}/>
 
-
+          
         <MyComp name="Comp 1" description='Something something'/>
         <TheCard title="Lizard" description='Lizard Seems Unhappy' image='/images/contemplative-reptile.jpg'/>
         <TheCard title="Iguana Lagi" description='Iguana Alawi Seems Unhappy' image='/images/contemplative-reptile.jpg'/>
